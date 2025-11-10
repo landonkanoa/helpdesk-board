@@ -2,7 +2,7 @@
 
 export default function TicketCard({ ticket, onAddToQueue, isQueued }) {
   return (
-    <div>
+    <div id="TC">
       <div>
         <span>Priority: {ticket.priority}</span>
       </div>
@@ -13,7 +13,7 @@ export default function TicketCard({ ticket, onAddToQueue, isQueued }) {
       <p>{ticket.description}</p>
       <div>Assignee: {ticket.assignee}</div>
       <div>Updated: {new Date(ticket.updatedAt).toLocaleString()}</div>
-      <button onClick={() => onAddToQueue(ticket.id)} disabled={isQueued}>
+      <button id="btn1" style={{backgroundColor: isQueued ? '#cccccc' : '#0066cc'}} onClick={() => onAddToQueue(ticket.id)} disabled={isQueued}>
         {isQueued ? "Already in Queue" : "Add to My Queue"}
       </button>
       {isQueued && <div>This Ticket is in your queue</div>}
